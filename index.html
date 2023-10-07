@@ -12,7 +12,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
   <link rel="stylesheet" href="app.css">
-  
+  <script defer src="app.js"></script>
 
   <title>Jakki's Events & Supplies</title>
 </head>
@@ -33,10 +33,10 @@
           <a class="nav-link" href="#secondSection">Our Services</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gallerySection">Pricing</a>
+          <a class="nav-link" href="#gallerySection">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gallerySection">Gallery</a>
+          <a class="nav-link" href="#fifthSection">Pricing</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#footerSection">Contact Us</a>
@@ -96,15 +96,13 @@
 
 
 
-
-
   <section class="container-fluid px-0" id="firstSection">
     <div class="row" style="padding-bottom: 5%;">
        <div class="col-lg-6 order-lg-1 order-md-2 article-side">
           <div class="article">
             <div class="article-details">
                 <p class="bookapp enlarge"> Book Your Appointment <br> Today! </p>
-                <div class ="article-button"> <button class="booknow" type="button"> Book Now! </button> </div>
+                <div class ="article-button"> <a href="#firstSection"><button class="booknow" type="button" data-toggle="collapse" data-target="#collapseExample"> Book Now! </button> </a> </div>
                 
             </div>
             </div>
@@ -112,14 +110,14 @@
 
       <div class="col-lg-6 order-lg-2 order-md-2">
         <div id="mission">
-          
+          <div id="missionimg">
+            <img class="img-fluid" src="./imgs/Word Art.png" alt="...">
+          </div>
+
           <div id="missiontitle">
             <p> Our Mission </p>
           </div>
-          <div id="missionimg">
-            <img class="img-fluid" src="./imgs/services/marriage-certificate.png" alt="...">
-          </div>
-
+        
           <div id="packround">
           </div>
           <div id="missiondesc">
@@ -135,6 +133,36 @@
         </div>
       </div>
     </div>
+    <div class="row formrow">
+      <div class="col-lg-12">
+      <div class="collapse" id="collapseExample">
+        <div class="popup" id="popup">
+          <h3 style="text-align: center; font-family: 'Trebuchet MS', sans-serif;"> Tell us more! </h3>
+        
+          <div class="form-group"> 
+            <h6 for="name"> Name: </h6>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name:">
+          </div>
+        
+            <div class="form-group"> 
+            <h6 for="email"> Email: </h6>
+            <input type="email" class="form-control" id="email" placeholder="Email address:">
+            </div>
+        
+            <div class="form-group"> 
+            <h6 for="message"> Message: </h6>
+            <textarea id="message" rows="5" class="form-control" placeholder="Enter your details here:"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="closePopup()">Submit</button> &nbsp;
+            <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseExample"> Close </button>
+          </div>
+      </div>
+      </div>
+
+      
+
+    </div>
+
     <hr color="#CE007F;" style="width:90%;">
   </section>
 
@@ -146,7 +174,9 @@
     <div class="row text-center">
       <div class="col-lg-12">
        
-        <h2 class="sectionHeadings"> Offered Services</h2>
+        <div id="secHead"><img src="./imgs/Services Offered Brush 2.png"></div>
+        <!-- <h2 class="sectionHeadings"> Offered Services</h2> -->
+
       </div>
     </div>
     <div class="row">
@@ -270,15 +300,6 @@
     </div>
   </section>
 
-  <!-- <section class="container-fluid px-0 background-tint" id="fillerSection">
-    <div class="row"> -->
-<!--       <img class="bannerImage" src="./imgs/engin-akyurt-MeNE7Ockq4w-unsplash.jpg"> -->
-          <!-- <div class="fillerBanner">
-            We Make Your Dreams A Reality
-          </div>
-    </div>
-  </section> -->
-
 
 
   <section class="container-fluid px-0" style="min-height:350px ;" id="fourthSection">
@@ -291,98 +312,85 @@
         </div>
         </div>
 
-        <div class="row"> 
-        <div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner card-item">
-            <div class="carousel-item active carouselItem">
-              
-              <div class="card mb-3 cardSlide">
-                <div class="row no-gutters cardBody">
-                  <div class="col-md-4 col-xs-2 cardImage">
+        <div class="row phase"> 
+          
+            <div class = "box blue">
+                  <div class="col-md-2 col-xs-1 cardImage">
                     <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
                   </div>
-                  <div class="col-md-8 col-xs-10">
-                    <div class="card-body1">
+                  <div class="col-md-10 col-xs-11 cardDesc">
                       <p class="card-title">Jane Doe </p>
-                      <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. <br>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p>
-                      <p class="card-text"><small class="text-muted">Rating: 
+                      <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. </p>
+                      <!-- .<br>
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p> -->
+                      <p class="card-rating"><small class="text-muted">Rating: 
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span></small>
                       </p>
                     </div>
-                  </div>
-                </div>
-              </div>
-
             </div>
-            <div class="carousel-item carouselItem">
-              
-              <div class="card mb-3 cardSlide">
-                <div class="row no-gutters cardBody">
-                  <div class="col-md-4 col-xs-4 cardImage">
-                    <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
-                  </div>
-                  <div class="col-md-8 col-xs-8">
-                    <div class="card-body1">
-                      <p class="card-title">Jane Doe </p>
-                      <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. <br>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p>
-                      <p class="card-text"><small class="text-muted">Rating: 
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span></small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-            </div>
-            <div class="carousel-item carouselItem">
-              
-              <div class="card mb-3 cardSlide">
-                <div class="row no-gutters cardBody">
-                  <div class="col-md-4 col-xs-4 cardImage">
-                    <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
-                  </div>
-                  <div class="col-md-8 col-xs-8">
-                    <div class="card-body1">
-                      <p class="card-title">Jane Doe </p>
-                      <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. <br>
-                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p>
-                      <p class="card-text"><small class="text-muted">Rating: 
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span></small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+            <div class = "box green">
+              <div class="col-md-2 col-xs-1 cardImage">
+                <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
               </div>
-
+              <div class="col-md-10 col-xs-11 cardDesc">
+                  <p class="card-title">Jane Doe </p>
+                  <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. </p>
+                      <!-- .<br>
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p> -->
+                  <p class="card-rating"><small class="text-muted">Rating: 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span></small>
+                  </p>
+                </div>
             </div>
-          </div>
-          <a class="carousel-control-prev d-none" href="#carouselExampleControls2" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next d-none" href="#carouselExampleControls2" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      
+            
+            <div class = "box purple cutBoxPurple">
+              <div class="col-md-2 col-xs-2 cardImage">
+                <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-10 col-xs-10 cardDesc">
+                  <p class="card-title">Jane Doe </p>
+                  <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. <br>
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p>
+                  <p class="card-rating"><small class="text-muted">Rating: 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span></small>
+                  </p>
+                </div>
+            </div>
+
+            <div class = "box yellow cutBoxYellow">
+              <div class="col-md-2 col-xs-2 cardImage">
+                <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-10 col-xs-10 cardDesc">
+                  <p class="card-title">Jane Doe </p>
+                  <p class="card-text">" This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. <br>
+                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. "</p>
+                  <p class="card-rating"><small class="text-muted">Rating: 
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span></small>
+                  </p>
+                </div>
+            </div>
+
       </div>
     </div>
-    <video src="./videos/Hearts.mp4" muted autoplay loop></video>
+    <video src="./videos/confetti_-_121498 (1080p).mp4" muted autoplay loop></video>
 
   </section>
 
@@ -393,7 +401,7 @@
  <section class="container-fluid" id="gallerySection">
     <div class="row text-center">
       <div class="col-lg-12">
-        <h2 class="sectionHeadings"> Gallery </h2>
+        <div id="secHead"><img src="./imgs/Gallery Brush 2.png"></div>
       </div>
       </div>
       <div class="row" style="min-height:200px">
@@ -401,31 +409,32 @@
 
         <div class="media-element">
           <img src="./imgs/engin-akyurt-640x426.jpg">
-          <p class="title"> Beachfront Arch </p>
+          <!-- <p class="title"> Beachfront Arch </p> -->
         </div>
         <div class="media-element">
           <img src="./imgs/pexels-jonathan-borba-3014858.jpg">
-          <p class="title"> Cake done by:</p>
+          <!-- <p class="title"> Cake done by:</p> -->
         </div>
         <div class="media-element">
           <img src="./imgs/pexels-edward-eyer-1045541.jpg">
-          <p class="title"> Bird's Eye View Reception</p>
+          <!-- <p class="title"> Bird's Eye View Reception</p> -->
         </div>
         <div class="media-element">
           <img src="./imgs/bruno-emmanuelle-ZpNBwBR38fA-unsplash.jpg">
-          <p class="title"> Garden Views</p>
+          <!-- <p class="title"> Garden Views</p> -->
         </div>
         <div class="media-element">
           <img src="./imgs/wedaisle.jpg">
-          <p class="title"> Garden Arch</p>
+          <!-- <p class="title"> Garden Arch</p> -->
         </div>
         <div class="media-element">
           <img src="./imgs/eugenivy_now-mUYjrnQLrSA-unsplash.jpg">
-          <p class="title"> Happy Couple</p>
+          <!-- <p class="title"> Happy Couple</p> -->
         </div>
 
       </div>
   </div>
+  
 
       <!-- <div class="row" id="imageRow">
         <div class="col-lg-4 col-md-4" id="imageCol">
@@ -468,59 +477,78 @@
 
   <section class="container-fluid px-0" id="fifthSection">
     <div class="row text-center">
-      <div class="col-lg-12 justify-content-center">
-   
-
-        <div class="panel pricing-table">
-
-          <div class="pricing-plan">
-            <img src="./imgs/icons/icon1.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Silver</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item">Custom domains</li>
-              <li class="pricing-features-item">Sleeps after 30 mins of inactivity</li>
-            </ul>
-            <span class="pricing-price">Free</span>
-            <!-- <a href="#/" class="pricing-button">Sign up</a> -->
-          </div>
-
-          <div class="pricing-plan">
-            <img src="./imgs/icons/icon2.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Gold</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item">Never sleeps</li>
-              <li class="pricing-features-item">Multiple workers for more powerful apps</li>
-            </ul>
-            <span class="pricing-price">$150</span>
-            <!-- <a href="#/" class="pricing-button is-featured">Free trial</a> -->
-          </div>
-
-          <div class="pricing-plan">
-            <img src="./imgs/icons/icon3.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Platinum</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item">Dedicated</li>
-              <li class="pricing-features-item">Simple horizontal scalability</li>
-            </ul>
-            <span class="pricing-price">$400</span>
-            <!-- <a href="#/" class="pricing-button">Free trial</a> -->
-          </div>
-
-          <div class="pricing-plan">
-            <img src="./imgs/icons/icon3.png" alt="" class="pricing-img">
-            <h2 class="pricing-header">Diamond</h2>
-            <ul class="pricing-features">
-              <li class="pricing-features-item">Dedicated</li>
-              <li class="pricing-features-item">Simple horizontal scalability</li>
-            </ul>
-            <span class="pricing-price">$400</span>
-            <!-- <a href="#/" class="pricing-button">Free trial</a> -->
-          </div>
-
-        </div>
+      <div class="col-lg-12">
+        <div id="secHead"><img src="./imgs/Packages Brush 2.png"></div>
       </div>
-
     </div>
+        <div class = "row priceTable">
+          <div class = "col-md-3">
+            <div class="pricingPlan">
+            <img src="./imgs/packages/icons8-silver-bars-100.png" class="priceImage">
+            <h3 class="priceHeader"> SILVER </h3>
+            <ul class="pricingFeatures">
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+            </ul>
+            <span class="pricingPrice">Free</span>
+          </div>
+          </div>
+
+          <div class = "col-md-3">
+            <div class="pricingPlan">
+            <img src="./imgs/packages/gold-bars.png" class="priceImage">
+            <h3 class="priceHeader"> GOLD </h3>
+            <ul class="pricingFeatures">
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+            </ul>
+            <span class="pricingPrice">Free</span>
+          </div>
+          </div>
+
+          <div class = "col-md-3">
+            <div class="pricingPlan">
+            <img src="./imgs/packages/icons8-silver-bars-100.png" class="priceImage">
+            <h3 class="priceHeader"> PLATINUM </h3>
+            <ul class="pricingFeatures">
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+            </ul>
+            <span class="pricingPrice">Free</span>
+          </div>
+          </div>
+
+          <div class = "col-md-3">
+            <div class="pricingPlan last">
+            <img src="./imgs/packages/diamond.png" class="priceImage">
+            <h3 class="priceHeader"> DIAMOND </h3>
+            <ul class="pricingFeatures">
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+              <li class="pricingFeatures-item">Custom domains</li>
+              <li class="pricingFeatures-item">Sleeps after 30 mins of inactivity</li>
+            </ul>
+            <span class="pricingPrice">Free</span>
+          </div>
+          </div>
+        </div>
+        </div>
   </section>
 
 
@@ -589,28 +617,6 @@
     <script src="./app.js"></script>
 
   <script>
-    // allows navbar to transistion on scroll
-    $(function () {
-      $(document).scroll(function () {
-        var $nav = $("#mainNavbar");
-        $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
-      });
-    });
-
-    ////// Smooth Scroll Into View JvaScript Function
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-
-    window.onbeforeunload = function () {
-      window.scrollTo(0, 0);
-    }
 
     ////////////////////
     // var navlink = document.getElementsByClassName('.nav-link');
